@@ -1,0 +1,124 @@
+/*general style*/
+body{
+   font-size: 18px;
+   font-family: "Ubuntu", sans-serif;
+   color: white;
+}
+@media (min-width:1200px) {
+  body {
+    background-image: url("https://res.cloudinary.com/ddfbifcav/image/upload/v1491316895/sunny-sm_molfkv.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+   }
+}
+
+@media (max-width:1199px) {
+   body {
+    background-image: url("https://res.cloudinary.com/ddfbifcav/image/upload/v1491316895/sunny-sm_molfkv.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+   }
+}
+  
+h2 {
+  text-align: center;
+  }
+
+/* syles for weather queries */
+h3 {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.2em;
+  margin: 0.8em 0 0.8em 0;
+}
+h4 {
+  text-align: center;
+  font-size: 1em;
+  margin: 0.8em 0.2em 0.8em 0.2em;
+  padding: 0.5em 0.5em;
+}
+
+/*style for accuracy note */
+p {
+  text-align: center;
+  font-style: italic;
+}
+
+/* styles for query boxes*/
+#w-box {
+  width: 80%;
+  margin: 2em auto 0 auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  color:black;
+}
+
+#chg-units {
+  display: block;
+  overflow: auto;
+}
+
+button {
+  margin: 0.5em 0.5em 0 0;
+  border: 2px solid #3a7999;
+  background: #3a7999;
+  color: #f2f2f2;
+  padding: 0.5em;
+  font-size: 0.8em;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: all 500ms ease;
+}
+
+button:hover {
+  border: 2px dotted #3a7999;
+  color: #3a7999;
+  background: rgba(0,0,0,0);
+}
+
+#chg-units button {
+  float: right;
+}
+
+#w-icon, #w-temp {
+  display: inline-block;
+}
+
+#w-data, #w-extra {
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ justify-content: center;
+}
+
+.w-extra-box {
+  display:inline-block;
+}
+
+div#accuracy {
+  display: block;
+  margin-bottom: 3em;
+}
+
+div#accuracy p{
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+footer {
+  position: relative;
+  top: 0.2em;
+  
+ }
+footer p {
+  font-size: 0.8em;
+  text-align: center;
+  color: black;
+}
+span {
+  background-color: rgba(255,255,255,0.5);
+  border: 1px solid white;
+  border-radius: 2px;
+}
