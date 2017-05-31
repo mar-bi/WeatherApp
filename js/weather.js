@@ -3,14 +3,22 @@ $(document).ready(function(){
   var curTemp = 0;
   var curTempF = 0;
   
-  getTemp();
+ // get location from IP
+  $.getJSON('https://ipinfo.io/', function(data){
+    var latlong = data.loc;
+    //console.log(data);
+    //console.log(latlong);
+    getTemp(latlong);
+  }); 
+  
 
 // get data from weather API
-  function getTemp(){
-     
+  function getTemp(coords){
+    var my_loc = coords + '.json';
+       
     $.ajax({
-			type: 'GET',
-			url: "http://api.wunderground.com/api/b1119d20cd37893d/conditions/q/autoip.json",
+      type: 'GET',
+      url: "https://cors-anywhere.herokuapp.com/http://api.wunderground.com/api/b1119d20cd37893d/conditions/q/" + my_loc,
       dataType : "json",
       success: function(data) {
         console.log("success", data);
@@ -27,7 +35,7 @@ $(document).ready(function(){
         //top row data
         $('#w-place').html('<h3>' + curPlace + '</h3>');
         //middle row data
-				$('#w-temp').html('<h4>' + curTemp + '&#176; C</h4>');
+        $('#w-temp').html('<h4>' + curTemp + '&#176; C</h4>');
         $('#img-icon').attr('src', newSrc);
         //bottom row data
         $('#w-humid').html('<h4>Relative humidity:<br>' + humid + '</h4>');
@@ -37,10 +45,10 @@ $(document).ready(function(){
         
         // call for change-background function
         changeBG(curTemp, precip, skyState);
-			},
-			error: function(){
-				console.log("Error getting temp");
-			}
+      },
+      error: function(){
+        console.log("Error getting temp");
+      }
     });
   };
 
